@@ -1,3 +1,11 @@
+# UFRC-YAMP
+
+ml git
+ml bbmap
+
+need to increase memory for 
+
+
 # Yet Another Metagenomic Pipeline (YAMP)
 
 Thanks to the increased cost-effectiveness of high-throughput technologies, the number of studies focusing on microorganisms (bacteria, archaea, microbial eukaryotes, fungi, and viruses) and on their connections with human health and diseases has surged, and, consequently, a plethora of approaches and software has been made available for their study, making it difficult to select the best methods and tools. 

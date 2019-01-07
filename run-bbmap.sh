@@ -3,7 +3,9 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=djlemas@ufl.edu
 #SBATCH --ntasks=2
-#SBATCH --mem=20gb
+#SBATCH --mem=40gb
+#SBATCH --account=djlemas
+#SBATCH --qos=djlemas-b
 #SBATCH --time=1:00:00
 #SBATCH --output=bbmap_%j.log
 pwd; hostname; date
@@ -13,6 +15,6 @@ module load bbmap
 
 #Run nextflow script
 cd /ufrc/djlemas/djlemas/YAMP/resources 
-bbmap.sh -Xmx20G ref=hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz
+bbmap.sh -Xmx40G ref=hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz
 
 date
