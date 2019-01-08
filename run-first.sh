@@ -23,5 +23,5 @@ module load python/2.7.14
 module load java/9.0.1
 
 #Run nextflow script
-nextflow run YAMP.nf --reads1 ./data/ERR011089_1.fastq.gz --reads2 ./data/ERR011089_2.fastq.gz --prefix Meta_HIT_ERR011089 --outdir ./data --mode complete -with-singularity docker://alesssia/yampdocker
+nextflow run YAMP.nf --reads1 ./data/ERR011089_1.fastq.gz --reads2 ./data/ERR011089_2.fastq.gz --prefix Meta_HIT_ERR011089 --outdir ./data --mode complete -with-singularity docker://dominicklemas/ufrc-yamp
 date
