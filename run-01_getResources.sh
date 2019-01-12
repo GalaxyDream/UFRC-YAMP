@@ -14,11 +14,11 @@ pwd; hostname; date
 module load bbmap
 
 # Download and uncompress files
-#wget https://zenodo.org/record/1068229/files/YAMP_resources_20171128.tar.gz
-#tar -xzf /ufrc/djlemas/djlemas/DEMO-YAMP/YAMP/YAMP_resources_20171128.tar.gz
+wget https://zenodo.org/record/1068229/files/YAMP_resources_20171128.tar.gz
+tar -xzf /ufrc/djlemas/djlemas/DEMO-YAMP/YAMP/YAMP_resources_20171128.tar.gz
 
 #Run nextflow script
 cd /ufrc/djlemas/djlemas/DEMO-YAMP/YAMP/resources/
 bbmap.sh -Xmx40G ref=hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz
-# rm YAMP_resources_20171128.tar.gz
+rm YAMP_resources_20171128.tar.gz
 date
