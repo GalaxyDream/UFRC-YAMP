@@ -6,7 +6,7 @@
 #SBATCH --mem=40gb
 #SBATCH --account=djlemas
 #SBATCH --qos=djlemas-b
-#SBATCH --time=1:00:00
+#SBATCH --time=2:00:00
 #SBATCH --output=demo_%j.log
 pwd; hostname; date
 
