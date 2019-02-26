@@ -3,9 +3,6 @@
 ml git
 ml bbmap
 
-need to increase memory for 
-
-
 # Yet Another Metagenomic Pipeline (YAMP)
 
 Thanks to the increased cost-effectiveness of high-throughput technologies, the number of studies focusing on microorganisms (bacteria, archaea, microbial eukaryotes, fungi, and viruses) and on their connections with human health and diseases has surged, and, consequently, a plethora of approaches and software has been made available for their study, making it difficult to select the best methods and tools. 
@@ -124,6 +121,8 @@ bbmap.sh -Xmx24G ref=hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz
 	nextflow run YAMP.nf --reads1 R --prefix mysample --outdir outputdir --mode MODE --librarylayout single
 	```
 	where `R` represents the path to the raw data (a compressed single-end FASTQ file), `librarylayout single` specifies that single-end reads are at hand, and the other parameters are as above.
+3. Run parallel with run.sh. Data should be stored in `data` folder, results will be stored in `result` folder. Now the code can only support to run for paired files. Please name all your paired files in the form of `A-R1-B` and `A-R2-B`, in which `A` and `B` stand for two strings in the file names. The output directory will be names as `A-`.
+> - Processing each pair of files need 4 CPUs and 40 GB Memory (Please modify `nextflow.config` file if you want to use a different one). If you have N CPUs and M Giga Bytes Memory size, you will be able to run **min(N/4, M/40)** in parallel.
 	
 Does it seem complicate? In the YAMP [wiki](https://github.com/alesssia/YAMP/wiki) there are some tutorials and a [TL;DR](https://github.com/alesssia/YAMP/wiki/TL%3BDR) if you are in a hurry!
 
@@ -178,7 +177,7 @@ We have listed all known issues and solutions on this [wiki page](https://github
 ### 0.9.4.2 / 2018-09-14
 
 Fixes:
-* Solved problem in loading data in 'complete` mode
+* Solved problem in loading data in `complete` mode
 
 Notes:
 * YAMP now requires Nextflow version 0.29.x or higher
@@ -190,7 +189,7 @@ Enhancements:
 
 Fixes:
 * Solved problem in loading data when using single library layout
-* Solved problem in loading data in 'characterisation` mode
+* Solved problem in loading data in `characterisation` mode
 
 
 
