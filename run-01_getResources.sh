@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=bbmap_60min
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=NONE #Changed ALL to NONE
 #SBATCH --mail-user=djlemas@ufl.edu
-#SBATCH --ntasks=2
+#SBATCH --ntasks=1
 #SBATCH --mem=40gb
 #SBATCH --account=djlemas
 #SBATCH --qos=djlemas-b
@@ -18,7 +18,7 @@ wget https://zenodo.org/record/1068229/files/YAMP_resources_20171128.tar.gz
 # Use relative location
 tar -xzf YAMP_resources_20171128.tar.gz
 
-#Run nextflow script
+# Run nextflow script
 cd resources # Change to relative location
 bbmap.sh -Xmx40G ref=hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz
 rm YAMP_resources_20171128.tar.gz

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=demo_%j
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=NONE
 #SBATCH --mail-user=djlemas@ufl.edu
 #SBATCH --ntasks=4
 #SBATCH --mem=40gb
