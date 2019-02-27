@@ -15,13 +15,12 @@ module load bbmap
 module load singularity
 module load nextflow
 module load fastqc         
-module load bbmap          
-module load samtools       
-# module load metaphlan2     
+module load samtools    
 module load qiime          
-module load python/2.7.14 
+module load python3
 module load java/9.0.1
 
 #Run nextflow script
-nextflow run YAMP.nf --reads1 ./data/ERR011089_1.fastq.gz --reads2 ./data/ERR011089_2.fastq.gz --prefix ERR011089 --outdir ./results --mode complete -with-singularity docker://dominicklemas/ufrc-yamp
+nextflow run YAMP.nf --reads1 ./data/ERR011089_1.fastq.gz --reads2 ./data/ERR011089_2.fastq.gz --prefix ERR011089 --outdir ./results --mode complete -with-singularity docker://dominicklemas/ufrc-yamp &&
+python3 get_stats.py
 date

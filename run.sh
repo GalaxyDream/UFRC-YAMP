@@ -5,4 +5,5 @@ find -name "*tar.bz2" -exec tar xopf '{}' \; &&
 find -name "*tar.bz2" -exec rm '{}' \; &&
 cd ..
 mkdir results
-python parallel.py -i data
+python3 parallel.py -i data &&
+python3 get_stats.py
