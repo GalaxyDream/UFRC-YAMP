@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-i', '--input', help="define the location of the input;", default="./data")
+        '-i', '--input', help="define the location of the input;", default="./results")
     parser.add_argument(
         '-o', '--output', help="define the location of the output;", default="./results")
 
