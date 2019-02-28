@@ -6,4 +6,6 @@ find -name "*tar.bz2" -exec rm '{}' \; &&
 cd ..
 mkdir results
 python3 parallel.py -i data &&
+
+# add this line to get statistics
 python3 get_stats.py

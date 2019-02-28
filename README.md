@@ -217,6 +217,16 @@ Enhancements:
 Enhancements:
 * YAMP can now be run in three *"modes"* : < QC, characterisation, complete >.
 
+### UFRC-YAMP / 2019-02-26 
+
+Enhancements:
+* Change file locations in `run-01_getResources.sh` from absolute to relative, which is more flexible (i.e. if you copy UFRC-YAMP from `A/UFRC-YAMP` to `B/UFRC-YAMP`, relagive location will not generate error).
+* Add `hpc-submit.sh`, `parallel.py` and `run.sh` to enable UCRC-YAMP to process multiple pairs of files in parallel.
+
+### UFRC-YAMP / 2019-02-27 
+
+Enhancements:
+* Add `get_stats.py` to get statistics from results, adjusted `run-03_runYAMPdemo.sh` and `run.sh`.
 
 ## License
 

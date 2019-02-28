@@ -20,7 +20,9 @@ module load qiime
 module load python3
 module load java/9.0.1
 
-#Run nextflow script
+# run nextflow script
 nextflow run YAMP.nf --reads1 ./data/ERR011089_1.fastq.gz --reads2 ./data/ERR011089_2.fastq.gz --prefix ERR011089 --outdir ./results --mode complete -with-singularity docker://dominicklemas/ufrc-yamp &&
+
+# add this line to get statistics
 python3 get_stats.py
 date
