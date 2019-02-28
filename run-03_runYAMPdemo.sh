@@ -17,7 +17,7 @@ module load nextflow
 module load fastqc         
 module load samtools    
 module load qiime          
-module load python3
+module load python3 # change python2 to python3, since the python codes were written by python3 
 module load java/9.0.1
 
 # run nextflow script
