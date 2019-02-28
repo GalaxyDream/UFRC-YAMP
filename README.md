@@ -9,9 +9,9 @@
 
 ## Usage
 
-1. Prepare for resources of runnint YAMP: `sbatch run-01_getResources.sh`
+1. Prepare resources before running YAMP: `sbatch run-01_getResources.sh`
 
-2. Run demo with example data: `bash run-02_getDemoData.sh && bash run-03_runYAMPdemo.sh`
+2. Run demo with example data: `bash run-02_getDemoData.sh && sbatch run-03_runYAMPdemo.sh`
 
 3. Run your data in parallel. 
 	```
