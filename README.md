@@ -32,6 +32,7 @@ Enhancements:
 
 Enhancements:
 * Add `get_stats.py` to get statistics from results, adjusted `run-03_runYAMPdemo.sh` and `run.sh`.
+* Update README for UFRC-YAMP.
 
 ## License
 
