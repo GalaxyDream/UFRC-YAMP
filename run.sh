@@ -1,3 +1,4 @@
+ml python3
 cd data/
 find -name "*tar.gz" -exec tar xvzf '{}' \; &&
 find -name "*tar.gz" -exec rm '{}' \; &&
