@@ -18,7 +18,7 @@
 	bash run.sh
 	```
     > - Please modify [slurm](https://slurm.schedmd.com/) configuration in `hpc_submit.sh` and `run-03_runYAMPdemo.sh` before running.
-	> - Data should be stored in `data` folder. Data format can be `.tar.gz`, `.tar.bz2` (The code will decompress them automatically), or paired of `.fastq*` files that are under the same folder. Results will be stored in `result` folder. Now the code can only support to run for paired files. Please name all your paired files in the form of `A-R1-B` and `A-R2-B`, in which `A` and `B` stand for two strings in the file names. The output directory will be names as `A-`.
+	> - Data should be stored in `data` folder. Data format can be `.tar.gz`, `.tar.bz2` (The code will decompress them automatically), or paired of `.fastq*` files that are under the same folder. Results will be stored in `result` folder. Now the code can only support to run for paired files. Please name all your paired files in the form of `A-R1-B` and `A-R2-B`, in which `A` and `B` stand for two strings in the file names. The output directory will be named as `A-`.
 	> - Processing each pair of files need 4 CPUs and 40 GB Memory (Please modify `nextflow.config` file if you want to use a different one). If you have N CPUs and M Giga Bytes Memory size, you will be able to run **min(N/4, M/40)** in parallel.
 
 ## Changelog
@@ -27,7 +27,7 @@
 
 Enhancements:
 * Change file locations in `run-01_getResources.sh` from absolute to relative, which is more flexible (i.e. if you copy UFRC-YAMP from `A/UFRC-YAMP` to `B/UFRC-YAMP`, relagive location will not generate error).
-* Add `hpc-submit.sh`, `parallel.py` and `run.sh` to enable UCRC-YAMP to process multiple pairs of files in parallel.
+* Add `hpc_submit.sh`, `parallel.py` and `run.sh` to enable UCRC-YAMP to process multiple pairs of files in parallel.
 
 ### UFRC-YAMP / 2019-02-27 
 
