@@ -12,7 +12,7 @@ mkdir -p work &&
 mkdir -p work/singularity &&
 mv dominicklemas-ufrc-yamp.img work/singularity &&
 #cd ../../ &&
-python3 parallel.py -i data &&
+python3 parallel.py -i data
 
 # add this line to get statistics
-python3 get_stats.py
+# python3 get_stats.py
