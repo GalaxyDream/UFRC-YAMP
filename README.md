@@ -35,6 +35,10 @@ Enhancements:
 * Add `get_stats.py` to get statistics from results, adjusted `run-03_runYAMPdemo.sh` and `run.sh`. A sample stats file is under `results` folder.
 * Update README for UFRC-YAMP.
 
+## Other notes
+
+* In `run.sh`, `ml python3` has to be after pulling singularity, otherwise there would be an python error `No module named os`
+
 ## License
 
 YAMP is licensed under GNU GPL v3.
