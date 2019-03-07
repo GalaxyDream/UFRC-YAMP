@@ -42,7 +42,7 @@ Enhancements:
 
 ## Other notes
 
-* In `run.sh`, `ml python3` has to be after pulling singularity, otherwise there would be an python error `No module named os`
+* In `run.sh`, `ml python3` has to be run after pulling singularity, otherwise there would be an python error `No module named os`
 
 ## License
 
