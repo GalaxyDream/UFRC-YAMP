@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=bbmap_60min
 #SBATCH --mail-type=NONE #Changed ALL to NONE
-#SBATCH --mail-user=djlemas@ufl.edu
+#SBATCH --mail-user=xinsongdu@ufl.edu
 #SBATCH --ntasks=1
 #SBATCH --mem=40gb
 #SBATCH --account=djlemas
 #SBATCH --qos=djlemas-b
-#SBATCH --time=01:00:00
-#SBATCH --output=bbmap_60min_%j.log
+#SBATCH --time=10:00:00
+#SBATCH --output=./logs/bbmap_60min_%j.log
 pwd; hostname; date
 
 # load modules
