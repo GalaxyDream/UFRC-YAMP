@@ -32,7 +32,7 @@ bash run.sh
 > - Data should be stored in `data` folder. Data format can be `.tar.gz`, `.tar.bz2` (The code will decompress them automatically), or paired of `.fastq*` files that are under the same folder. Results will be stored in `result` folder. Now the code can only support to run for paired files. Please name all your paired files in the form of `A-R1-B` and `A-R2-B`, in which `A` and `B` stand for two strings in the file names. The output directory will be named as `A-`.
 > - Processing each pair of files need 4 CPUs and 40 GB Memory (Please modify `nextflow.config` file if you want to use a different one). If you have N CPUs and M Giga Bytes Memory size, you will be able to run **min(N/4, M/40)** in parallel.
 
-5. Get statistics from results after getting all needed results:
+5. Get statistics/completeness from results after getting all needed results:
 ```
 ml python3 && python3 get_stats.py
 ```
@@ -49,6 +49,12 @@ Enhancements:
 
 Enhancements:
 * Add `get_stats.py` to get statistics from results, adjusted `run-03_runYAMPdemo.sh` and `run.sh`. A sample stats file is under `results` folder.
+* Update README for UFRC-YAMP.
+
+### UFRC-YAMP / 2019-05-11 
+
+Enhancements:
+* Add code to `get_stats.py` to get completeness of each data (i.e. the presence of "STEP 3 (Community Characterisation) terminated" in the log file under a certain folder indicates the completeness of the processing)
 * Update README for UFRC-YAMP.
 
 ## Other notes

@@ -17,17 +17,30 @@ def get_stats(datafolder, outputfolder):
     
     f_names = []
     seq_len = []
+    jobs = []
+    completeness = []
 
     for root, dirs, files in os.walk(os.path.abspath(datafolder)):
         for file in files:
             if file.endswith('.txt'):
                 with open(os.path.join(root, file)) as f:
                     f_names.append(file)
-                    seq_len.append(f.readlines()[8].split()[2])
+                    seq_len.append(f.readlines()[8].split()[2]) # obtain sequence length
+            if file.endswith('_.log'):
+                jobs.append(root.split("/")[-1])
+                with open(os.path.join(root, file)) as f:
+                    if "STEP 3 (Community Characterisation) terminated" in f.read():
+                        completeness.append("Completed")
+                    else:
+                        completeness.append("Failed")
 
-    d = {'file_names': f_names, 'seqence_length': seq_len}
-    df = pd.DataFrame(data = d)
-    df.to_csv(os.path.join(outputfolder, 'stats.csv'), index = False, quoting = csv.QUOTE_ALL)
+
+    d_stats = {'file_names': f_names, 'seqence_length': seq_len}
+    d_completeness = {'job': jobs, 'completeness': completeness}
+    df_stats = pd.DataFrame(data = d_stats)
+    df_completeness = pd.DataFrame(data = d_completeness)
+    df_stats.to_csv(os.path.join(outputfolder, 'stats.csv'), index = False, quoting = csv.QUOTE_ALL)
+    df_completeness.to_csv(os.path.join(outputfolder, 'completeness.csv'), index = False, quoting = csv.QUOTE_ALL)
 
 if __name__ == '__main__':
 
