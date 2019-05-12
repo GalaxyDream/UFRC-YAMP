@@ -42,6 +42,25 @@ def get_stats(datafolder, outputfolder):
     df_stats.to_csv(os.path.join(outputfolder, 'stats.csv'), index = False, quoting = csv.QUOTE_ALL)
     df_completeness.to_csv(os.path.join(outputfolder, 'completeness.csv'), index = False, quoting = csv.QUOTE_ALL)
 
+def completeness_mpc(datafolder):
+    data = pd.read_csv(os.path.join(datafolder, "completeness.csv"))
+    content = ""
+    for i in range(len(data)):
+        content += "    " + data["job"].iloc[i] + ":\n\
+            completeness: " + data["completeness"].iloc[i] + "\n"
+
+    with open(os.path.join(datafolder, "completeness.yaml"), 'w+') as f:
+        f.write("id: 'download_links'\n\
+section_name: 'Processing completeness'\n\
+description: 'This table shows the completeness of processing results.'\n\
+plot_type: 'table'\n\
+pconfig:\n\
+    id: 'download_links_table'\n\
+    namespace: 'Download links'\n\
+    title: 'Download data'\n\
+    scale: false\n\
+data:\n" + content)
+
 if __name__ == '__main__':
 
     logger.info(sys.version)
@@ -61,3 +80,4 @@ if __name__ == '__main__':
     logger.addHandler(handler)
 
     get_stats(args.input, args.output)
+    completeness_mpc(args.output)

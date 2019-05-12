@@ -36,6 +36,10 @@ bash run.sh
 ```
 ml python3 && python3 get_stats.py
 ```
+6. Get MultiQC report:
+```
+ml gcc/5.2.0 && ml multiqc/1.5 && multiqc results/
+```
 
 ## Changelog
 
@@ -55,6 +59,7 @@ Enhancements:
 
 Enhancements:
 * Add code to `get_stats.py` to get completeness of each data (i.e. the presence of "STEP 3 (Community Characterisation) terminated" in the log file under a certain folder indicates the completeness of the processing)
+* Enable multiQC to report the complete status of the datasets.
 * Update README for UFRC-YAMP.
 
 ## Other notes
